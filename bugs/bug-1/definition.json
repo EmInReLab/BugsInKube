@@ -1,7 +1,7 @@
 {
     "id": 1,
     "platform": "k8s",
-    "affected-version":"<v1.29.0",
+    "affected-version":"<= v1.29.0",
     "affected-categorization": "scheduling",
     "severity": "minor",
     "resolved": "open",

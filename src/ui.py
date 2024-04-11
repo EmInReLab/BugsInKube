@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
+from main import handleSubmit
+import time
 
 def update_number_range(event):
     selected_platform = dropdown_var.get()
@@ -13,9 +15,21 @@ def submit():
     selected_number = number_var.get()
     selected_platform = dropdown_var.get()
     selected_checkbox = checkbox_var.get()
-    print("Selected Platform:", selected_platform)
-    print("Selected Bug ID:", selected_number)
-    print("Checkbox Checked:", selected_checkbox)
+    open_new_window(selected_platform, selected_number, selected_checkbox)
+
+
+def open_new_window(selected_platform, selected_number, selected_checkbox):
+    new_window = tk.Toplevel(root)
+    new_window.title("Bug Detail")
+    text_label = ttk.Label(new_window, text=f"Bug {selected_number}")
+    text_label.pack()
+    
+    # Create a Text widget for displaying dynamic text
+    text_widget = tk.Text(new_window, height=30, width=150)
+    text_widget.pack()
+
+    # Continuously add new lines of text dynamically
+    handleSubmit(text_widget, new_window, selected_platform, selected_number, selected_checkbox)
 
 # Create main window
 root = tk.Tk()
@@ -25,9 +39,9 @@ root.title("PaaS Bug Inspector")
 dropdown_label = ttk.Label(root, text="Select the PaaS platform:")
 dropdown_label.grid(row=0, column=0, padx=10, pady=5)
 dropdown_var = tk.StringVar()
-dropdown_combobox = ttk.Combobox(root, textvariable=dropdown_var, values=["Kubernetes", "Mesos"])
+dropdown_combobox = ttk.Combobox(root, textvariable=dropdown_var, values=["Kubernetes"])
 dropdown_combobox.grid(row=0, column=1, padx=10, pady=5)
-dropdown_combobox.current(0)
+dropdown_combobox.current(None)
 dropdown_combobox.bind("<<ComboboxSelected>>", update_number_range)
 
 # Create number selection

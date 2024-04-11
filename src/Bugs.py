@@ -1,5 +1,6 @@
 import abc
 import json
+from src.utils.printPretty import *
 
 
 class Bug:
@@ -16,9 +17,13 @@ class Bug:
         definition = self.info + "/definition.json"
         manifest = self.info + "/manifest.json"
         patch = self.info + "/patch.json"
-        with open(definition, 'r') as definitionFile:
-            definitionData = json.load(definitionFile)
-        print(definitionData)
+        with open(definition, 'r') as file:
+            definitionData = json.load(file)
+        with open(manifest, 'r') as file:
+            manifestData = json.load(file)
+        with open(patch, 'r') as file:
+            patchData = json.load(file)
+        printDefinitionK8s(definitionData, manifestData, patchData)
 
         
 
