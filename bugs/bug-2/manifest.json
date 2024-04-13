@@ -1,20 +1,30 @@
-
-
-
-//apiVersion: apps/v1
-//kind: Deployment
-//metadata:
-//  name: bash
-//spec:
-//  selector:
-//    matchLabels:
-//      app: bash
-//  template:
-//    metadata:
-//      labels:
-//        app: bash
-//    spec:
-//      containers:
-//        - name: bash
-//          image: ubuntu:21.04
-//          command: ["tail", "-f", "/dev/null"]
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "bash"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "bash"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "bash"
+        }
+      }, "spec": {
+        "containers": [
+          {
+            "name": "bash",
+            "image": "ubuntu:21.04",
+            "command": ["tail", "-f", "/dev/null"]
+          }
+        ]
+      }
+    }
+  }
+}

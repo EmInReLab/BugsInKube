@@ -16,12 +16,16 @@
         "labels": {
           "app": "busybox"
         }
-      }, "spec": {
+      },
+      "spec": {
         "containers": [
           {
             "name": "busybox-container",
             "image": "busybox",
-            "command": ["sleep", "3600"]
+            "command": [
+              "sleep",
+              "3600"
+            ]
           }
         ]
       }
