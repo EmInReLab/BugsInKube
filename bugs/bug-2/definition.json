@@ -1,0 +1,11 @@
+{
+    "id": 2,
+    "platform": "k8s",
+    "affected-version":"<= v1.29.0",
+    "affected-categorization": "scheduling",
+    "severity": "minor",
+    "resolved": "open",
+    "link": "https://github.com/kubernetes/kubernetes/issues/123422",
+    "description": "Creating a deployment with a pod spec with an unsafe sysctl not whitelisted results in the pods being rejected by Kubelet with SysctlForbidden and the replicatset controller just keeps creating new pods in a tight loop.",
+    "expected-behaviour": "Deployment should fail and stop creating the pods in a loop after a backoff time"
+}
