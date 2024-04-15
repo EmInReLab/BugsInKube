@@ -1,0 +1,11 @@
+{
+  "id": 20,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "apps",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/123551",
+  "description": "The StatefulSet (STS) forbids patching volumeClaimTemplate labels beyond specified fields (e.g., 'replicas', 'ordinals', 'template'). Editing labels within volumeClaimTemplate triggers a \"Forbidden\" error, restricting updates beyond specified fields.",
+  "expected-behaviour": "The StatefulSet should allow patching of volumeClaimTemplate labels, consistent with the flexibility allowed for PersistentVolumeClaims (PVCs)."
+}
