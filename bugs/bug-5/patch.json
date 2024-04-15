@@ -33,8 +33,19 @@
                 "cpu": "800m"
               }
             },
-            "command": ["stress"],
-            "args": ["--vm", "1", "--vm-bytes", "256M", "-c", "2", "--vm-hang", "1"]
+            "command": [
+              "stress"
+            ],
+            "args": [
+              "--vm",
+              "1",
+              "--vm-bytes",
+              "256M",
+              "-c",
+              "2",
+              "--vm-hang",
+              "1"
+            ]
           }
         ]
       }

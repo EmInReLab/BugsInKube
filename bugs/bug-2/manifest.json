@@ -16,12 +16,17 @@
         "labels": {
           "app": "bash"
         }
-      }, "spec": {
+      },
+      "spec": {
         "containers": [
           {
             "name": "bash",
             "image": "ubuntu:21.04",
-            "command": ["tail", "-f", "/dev/null"]
+            "command": [
+              "tail",
+              "-f",
+              "/dev/null"
+            ]
           }
         ]
       }
