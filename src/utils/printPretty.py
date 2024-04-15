@@ -1,18 +1,23 @@
 import json
 
-def printDefinitionK8s(definition:dict, manifest:dict, patch:dict)->None:
+
+def printDefinitionK8s(definition: dict, manifest: dict, patch: dict) -> None:
     print("====================BUG Definition====================")
     print(f'Bug ID\t\t\t\t\t: {definition["id"]}')
     print(f'Bug reported Platform\t\t\t: {definition["platform"]}')
     print(f'Affected Version\t\t\t: {definition["affected-version"]}')
-    print(f'Affected Component Categorization\t: {definition["affected-categorization"]}')
+    print(
+        f'Affected Component Categorization\t: {definition["affected-categorization"]}'
+    )
     print(f'Severity\t\t\t\t: {definition["severity"]}')
     print("======================================================")
-    if (definition["resolved"] == "open"):
+    if definition["resolved"] == "open":
         print("Full patch of the bug has not been produced yet")
     else:
         print("Full patch of the bug has been produced")
-    print(f'Follow the link for more information about the bug status: {definition["link"]}')
+    print(
+        f'Follow the link for more information about the bug status: {definition["link"]}'
+    )
     print("======================================================")
     print("Detailed Description About the Bug")
     print("======================================================")

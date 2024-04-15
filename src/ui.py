@@ -3,13 +3,15 @@ from tkinter import ttk
 from main import handleSubmit
 import time
 
+
 def update_number_range(event):
     selected_platform = dropdown_var.get()
     if selected_platform == "Kubernetes":
-        number_combobox['values'] = list(range(1, 31))
+        number_combobox["values"] = list(range(1, 31))
     elif selected_platform == "Mesos":
-        number_combobox['values'] = list(range(31, 61))
+        number_combobox["values"] = list(range(31, 61))
     number_combobox.current(0)
+
 
 def submit():
     selected_number = number_var.get()
@@ -23,13 +25,16 @@ def open_new_window(selected_platform, selected_number, selected_checkbox):
     new_window.title("Bug Detail")
     text_label = ttk.Label(new_window, text=f"Bug {selected_number}")
     text_label.pack()
-    
+
     # Create a Text widget for displaying dynamic text
     text_widget = tk.Text(new_window, height=30, width=150)
     text_widget.pack()
 
     # Continuously add new lines of text dynamically
-    handleSubmit(text_widget, new_window, selected_platform, selected_number, selected_checkbox)
+    handleSubmit(
+        text_widget, new_window, selected_platform, selected_number, selected_checkbox
+    )
+
 
 # Create main window
 root = tk.Tk()
