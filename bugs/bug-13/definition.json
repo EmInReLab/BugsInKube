@@ -1,0 +1,11 @@
+{
+  "id": 13,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119445",
+  "description": "A client is allowed to add custom finalizers to Custom Resources with a finalizer name that's not fully qualified, it accepts the configuration and create the CRD. ",
+  "expected-behaviour": "It should not execute. The custom finalizer names are expected to be in format \"consist of a domain name, a forward slash and the name of the finalizer\". So the enforcement to be the same for CRs and builtin types."
+}

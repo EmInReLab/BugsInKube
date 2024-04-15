@@ -1,0 +1,11 @@
+{
+  "id": 17,
+  "platform": "k8s",
+  "affected-version": "<= v1.17.0",
+  "affected-categorization": "scheduling",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/74081",
+  "description": "The image name in pod.status.containerStatuses is different from pod.spec.containers via `kubectl get pod -o yaml`.",
+  "expected-behaviour": "The image name in should be the same in pod.status.containerStatuses and pod.spec.containers"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinary",
+  "severity": "major",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119749",
+  "description": "Creating a CRD with a case-insensitive uniqueness check and appropriate maxLength/maxItems limits should be allowed. But it throws an \"CustomResourceDefinition 'uniquetests.stable.example.com' is invalid\" exception.",
+  "expected-behaviour": "Creating a CRD with a case-insensitive uniqueness check and appropriate maxLength/maxItems limits should be allowed."
+}

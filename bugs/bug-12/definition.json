@@ -1,0 +1,11 @@
+{
+  "id": 12,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "node",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/121398",
+  "description": "A terminated container cannot restart when there is any terminating container in the same pod.",
+  "expected-behaviour": "The terminated container can restart during another container's termination."
+}

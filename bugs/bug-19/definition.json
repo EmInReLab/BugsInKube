@@ -1,0 +1,11 @@
+{
+  "id": 19,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "node",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/122602",
+  "description": "Patching a pod to request more CPU than the available node limit results in an inconsistent state. The pod's request is updated, but the node doesn't reflect the increased demand.",
+  "expected-behaviour": "Patching a pod to request CPU exceeding the node limit should fail. The kubectl patch command should return an error message indicating insufficient resources."
+}

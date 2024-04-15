@@ -1,0 +1,11 @@
+{
+  "id": 14,
+  "platform": "k8s",
+  "affected-version": "<= v1.28.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118725",
+  "description": "After creating a Service with server side apply, modifications to that service may prevent additional attempts at server side apply.",
+  "expected-behaviour": "It should be server side apply would be successful at asserting the desired state."
+}

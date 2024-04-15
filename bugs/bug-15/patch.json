@@ -1,0 +1,51 @@
+{
+  "apiVersion": "apiextensions.k8s.io/v1",
+  "kind": "CustomResourceDefinition",
+  "metadata": {
+    "name": "uniquetests.stable.example.com"
+  },
+  "spec": {
+    "group": "stable.example.com",
+    "versions": [
+      {
+        "name": "v1",
+        "served": true,
+        "storage": true,
+        "schema": {
+          "openAPIV3Schema": {
+            "type": "object",
+            "properties": {
+              "spec": {
+                "type": "object",
+                "properties": {
+                  "headers": {
+                    "type": "array",
+                    "x-kubernetes-validations": [
+                      {
+                        "rule": "self.all(item1, self.exists_one(item2, item1.name.lowerAscii() == item2.name.lowerAscii()))"
+                      }
+                    ],
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "scope": "Namespaced",
+    "names": {
+      "plural": "uniquetests",
+      "singular": "uniquetest",
+      "kind": "UniqueTest"
+    }
+  }
+}

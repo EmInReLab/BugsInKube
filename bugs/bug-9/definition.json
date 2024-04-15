@@ -1,0 +1,11 @@
+{
+  "id": 9,
+  "platform": "k8s",
+  "affected-version": "<= v1.26.0",
+  "affected-categorization": "app",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118588",
+  "description": "Patching an immutable secret to add a label results in an error. However, using the kubectl label command successfully changes the label.",
+  "expected-behaviour": "The secret can be updated with the new labels since the data is not actually changed."
+}
