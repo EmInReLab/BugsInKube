@@ -1,0 +1,13 @@
+{
+  "apiVersion": "v1",
+  "kind": "Secret",
+  "metadata": {
+    "name": "test",
+    "labels": {
+      "helm.sh/chart": "other"
+    }
+  },
+  "data": {
+    "test": ""
+  }
+}

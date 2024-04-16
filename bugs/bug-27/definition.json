@@ -1,0 +1,11 @@
+{
+  "id": 27,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119700",
+  "description": "The status subresource of a service to set .spec.loadBalancer.ingress[].ip, it is allowed even when the .spec.type is not \"LoadBalancer\". However, when the user subsequently updates the service spec in any way, .status.loadBalancer is wiped.",
+  "expected-behaviour": "When a user updates the status subresource of a service to set .spec.loadBalancer.ingress[].ip, it should only be allowed if .spec.type is \"LoadBalancer\". If the user updates the service spec in any way afterwards, .status.loadBalancer should not be wiped."
+}

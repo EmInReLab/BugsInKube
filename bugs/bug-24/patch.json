@@ -1,0 +1,28 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "demo-apiservice",
+    "namespace": "default"
+  },
+  "spec": {
+    "ports": [
+      {
+        "port": 80,
+        "protocol": "TCP",
+        "targetPort": 80,
+        "name": "port-80"
+      },
+      {
+        "port": 6443,
+        "protocol": "TCP",
+        "targetPort": 80,
+        "name": "port-6443"
+      }
+    ],
+    "type": "ClusterIP",
+    "selector": {
+      "app": "demo-apiservice"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": 22,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "node",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/122902",
+  "description": "If a readinessProbe is specified for this init container, its result will be used to determine the ready state of the Pod.\"\n\nit's true only for pod.spec.restartPolicy = Always, sidecar container readiness result will be used in Pod ready state, neither \"Never\" or \"OnFailure\".",
+  "expected-behaviour": "It said, \"If a readinessProbe is specified for this init container, its result will be used to determine the ready state of the Pod.\" also applicable to pod.spec.restartPolicy = \"Never\" or \"OnFailure\"."
+}

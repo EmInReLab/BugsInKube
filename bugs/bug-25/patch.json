@@ -1,0 +1,19 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "colorful",
+    "labels": {
+      "foo": "bar",
+      "baz": null
+    }
+  },
+  "spec": {
+    "containers": [
+      {
+        "image": "superorbital/color",
+        "name": "colorful"
+      }
+    ]
+  }
+}

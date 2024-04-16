@@ -1,0 +1,11 @@
+{
+  "id": 24,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/121245",
+  "description": "The APIService remains blocked on the FailedDiscoveryCheck condition despite receiving a valid response directly. Restarting the kube-apiserver temporarily resolves the issue.",
+  "expected-behaviour": "The APIService to be available and not blocked on the FailedDiscoveryCheck condition after creating the APIService and updating the associated Service to include the APIService's port."
+}

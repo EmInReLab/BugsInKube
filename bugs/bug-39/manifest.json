@@ -1,0 +1,44 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "kube-state-metrics",
+    "namespace": "kube-system"
+  },
+  "spec": {
+    "replicas": 1,
+    "revisionHistoryLimit": 10,
+    "selector": {
+      "matchLabels": {
+        "k8s-app": "kube-state-metrics",
+        "k8s-submitter": "controller"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "k8s-app": "kube-state-metrics",
+          "k8s-submitter": "controller"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "image": "myimage",
+            "imagePullPolicy": "Always",
+            "name": "kube-state-metrics",
+            "ports": [
+              {
+                "containerPort": 8180,
+                "name": "http-metrics",
+                "protocol": "TCP"
+              }
+            ]
+          }
+        ],
+        "hostNetwork": true,
+        "restartPolicy": "Always"
+      }
+    }
+  }
+}

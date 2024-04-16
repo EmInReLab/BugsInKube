@@ -1,0 +1,52 @@
+{
+  "kind": "DaemonSet",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "name": "simple-probe"
+  },
+  "spec": {
+    "selector": {
+      "matchLabels": {
+        "k8s-app": "simple-probe"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "k8s-app": "simple-probe"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "probe",
+            "image": "registry.k8s.io/busybox",
+            "args": [
+              "/bin/sh",
+              "-c",
+              "touch /tmp/healthy; sleep 9999999"
+            ],
+            "livenessProbe": {
+              "exec": {
+                "command": [
+                  "cat",
+                  "/tmp/healthy"
+                ]
+              },
+              "periodSeconds": 5
+            },
+            "readinessProbe": {
+              "exec": {
+                "command": [
+                  "cat",
+                  "/tmp/healthy"
+                ]
+              },
+              "periodSeconds": 5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

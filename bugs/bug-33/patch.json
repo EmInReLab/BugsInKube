@@ -1,0 +1,11 @@
+{
+  "apiVersion": "v1",
+  "kind": "Secret",
+  "metadata": {
+    "name": "example"
+  },
+  "stringData": {
+    "foo": "bar"
+  },
+  "type": "Opaque"
+}

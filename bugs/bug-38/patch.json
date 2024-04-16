@@ -1,0 +1,33 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "myapp",
+    "namespace": "test"
+  },
+  "spec": {
+    "selector": {
+      "matchLabels": {
+        "app": "myapp"
+      }
+    },
+    "strategy": {
+      "type": "Recreate"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "dummy": "dummy2"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "myapp",
+            "image": "nginx:1.15.8"
+          }
+        ]
+      }
+    }
+  }
+}

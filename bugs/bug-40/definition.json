@@ -1,0 +1,11 @@
+{
+  "id": 40,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/111725",
+  "description": "When you execute kubectl delete deploy foobar --cascade='foreground', it will delete the replica-sets and the pods of the deployment.",
+  "expected-behaviour": "When a object referred by an ownerReference and having finalizers is deleted, I expect to stop cascade propagation until deleted the finalizers when cascade='foreground'."
+}
