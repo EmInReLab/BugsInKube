@@ -1,0 +1,11 @@
+{
+  "id": 36,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/116747",
+  "description": "When create a service which already exist,I got 422 and error message The Service \"my-service\" is invalid: spec.ports[0].nodePort: Invalid value: 30123: provided port is already allocated.",
+  "expected-behaviour": "The should not execute. The expected behaviour would be, the pod kubectl apply should throw an error and should not apply the config."
+}

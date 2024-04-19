@@ -2,31 +2,34 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "bash"
+    "name": "busybox-deployment",
+    "labels": {
+      "app": "busybox"
+    }
   },
   "spec": {
     "replicas": 1,
     "selector": {
       "matchLabels": {
-        "app": "bash"
+        "app": "busybox"
       }
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "bash"
+          "app": "busybox"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "bash",
-            "image": "ubuntu:21.04",
-            "command": [
-              "tail",
-              "-f",
-              "/dev/null"
-            ]
+            "name": "busybox",
+            "image": "busybox:1.36",
+            "resources": {
+              "requests": {
+                "cpu": "1.2"
+              }
+            }
           }
         ]
       }

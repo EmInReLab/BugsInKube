@@ -1,0 +1,81 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "sidecar"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "sidecar"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "sidecar"
+        }
+      },
+      "spec": {
+        "initContainers": [
+          {
+            "name": "init-1",
+            "image": "ubuntu",
+            "command": [
+              "sh",
+              "-c",
+              "|",
+              "sleep",
+              "1"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "100m",
+                "memory": "100Mi"
+              }
+            }
+          },
+          {
+            "name": "sidecar-1",
+            "image": "ubuntu",
+            "command": [
+              "sh",
+              "-c",
+              "|",
+              "sleep",
+              "1"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "200m",
+                "memory": "200Mi"
+              }
+            },
+            "restartPolicy": "Always"
+          }
+        ],
+        "containers": [
+          {
+            "name": "main",
+            "image": "ubuntu",
+            "command": [
+              "sh",
+              "-c",
+              "|",
+              "sleep",
+              "1"
+            ],
+            "resources": {
+              "limits": {
+                "cpu": "300m",
+                "memory": "300Mi"
+              }
+            }
+          }
+        ],
+        "terminationGracePeriodSeconds": 1
+      }
+    }
+  }
+}

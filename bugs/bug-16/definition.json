@@ -1,0 +1,11 @@
+{
+  "id": 16,
+  "platform": "k8s",
+  "affected-version": "<= v1.28.0",
+  "affected-categorization": "apps",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/120160",
+  "description": "When patch a deployment with the nodeName, there will be so much of pod created and their status will be 'failed'",
+  "expected-behaviour": "When patch a deployment with the nodeName, it should not apply that but throw a warning instead."
+}

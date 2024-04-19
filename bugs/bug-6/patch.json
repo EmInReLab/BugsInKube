@@ -1,0 +1,30 @@
+{
+  "apiVersion": "batch/v1",
+  "kind": "Job",
+  "metadata": {
+    "name": "test"
+  },
+  "spec": {
+    "activeDeadlineSeconds": 10,
+    "ttlSecondsAfterFinished": 120,
+    "completions": 5,
+    "parallelism": 1,
+    "backoffLimit": 4,
+    "template": {
+      "spec": {
+        "restartPolicy": "Never",
+        "containers": [
+          {
+            "name": "ctr",
+            "image": "alpine:latest",
+            "command": [
+              "sh",
+              "-c",
+              "echo \"TEST\" && sleep 60"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

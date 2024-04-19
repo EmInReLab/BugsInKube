@@ -1,0 +1,11 @@
+{
+  "id": 11,
+  "platform": "k8s",
+  "affected-version": "<= v1.28.0",
+  "affected-categorization": "scheduling",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119377",
+  "description": "Kubernetes does not respect the terminationGracePeriodSeconds of a probe. When we add a pod with the terminationGracePeriodSeconds greater than startupProbe.terminationGracePeriodSeconds, it does not override the existing one.",
+  "expected-behaviour": "The terminationGracePeriodSeconds of a container's probe should override the pod's terminationGracePeriodSeconds."
+}

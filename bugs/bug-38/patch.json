@@ -2,31 +2,29 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "bash"
+    "name": "myapp",
+    "namespace": "test"
   },
   "spec": {
-    "replicas": 1,
     "selector": {
       "matchLabels": {
-        "app": "bash"
+        "app": "myapp"
       }
+    },
+    "strategy": {
+      "type": "Recreate"
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "bash"
+          "dummy": "dummy2"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "bash",
-            "image": "ubuntu:21.04",
-            "command": [
-              "tail",
-              "-f",
-              "/dev/null"
-            ]
+            "name": "myapp",
+            "image": "nginx:1.15.8"
           }
         ]
       }

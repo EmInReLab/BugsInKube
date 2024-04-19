@@ -2,31 +2,32 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "bash"
+    "name": "nginx",
+    "finalizers": [
+      "foo.com/bar"
+    ]
   },
   "spec": {
-    "replicas": 1,
+    "strategy": {
+      "type": "Recreate"
+    },
     "selector": {
       "matchLabels": {
-        "app": "bash"
+        "app": "nginx"
       }
     },
+    "replicas": 1,
     "template": {
       "metadata": {
         "labels": {
-          "app": "bash"
+          "app": "nginx"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "bash",
-            "image": "ubuntu:21.04",
-            "command": [
-              "tail",
-              "-f",
-              "/dev/null"
-            ]
+            "name": "nginx",
+            "image": "nginx"
           }
         ]
       }

@@ -1,0 +1,11 @@
+{
+  "id": 8,
+  "platform": "k8s",
+  "affected-version": "<= v1.25.2",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118674",
+  "description": "When rename a pod causes duplicate pods if SSA and CSA. When we patch using the different applying (CSA or SSA) than the creating the pod, the deployment spawned two containers: one with the old name and one with the new name",
+  "expected-behaviour": "The deployment to reflect whatever manifest we applied to the cluster. It should not depends on the whatever applying is using."
+}

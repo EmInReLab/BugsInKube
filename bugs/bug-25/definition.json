@@ -1,0 +1,11 @@
+{
+  "id": 25,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119954",
+  "description": "When the manifest is applied for the second time, only the labels specified in the manifest are retained, and the existing labels are removed.",
+  "expected-behaviour": "Applying the same manifest twice would result in the same document being persisted twice, retaining all labels specified in the manifest."
+}

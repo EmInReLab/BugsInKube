@@ -1,0 +1,11 @@
+{
+  "id": 30,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118920",
+  "description": "Kubectl apply svc cannot add UDP protocol ports.",
+  "expected-behaviour": "This should not fail. Kubectl apply svc can add UDP protocol ports"
+}

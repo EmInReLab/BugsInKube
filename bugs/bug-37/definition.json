@@ -1,0 +1,11 @@
+{
+  "id": 37,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/116135",
+  "description": "When creating a deployment and requesting cpu, then there are some cases when the output of kubectl apply (when doing it more than once) shows configured rather than unchanged.",
+  "expected-behaviour": "The output of kubectl apply should be:\"... unchanged\""
+}

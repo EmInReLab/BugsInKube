@@ -1,0 +1,11 @@
+{
+  "id": 29,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "scheduling",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119126",
+  "description": "When applying a Service update with additional UDP port using client-side apply, the new port isn't added.",
+  "expected-behaviour": "Service update should successfully add the UDP port using client-side apply, matching server-side apply behavior."
+}

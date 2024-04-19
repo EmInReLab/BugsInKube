@@ -1,0 +1,74 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "labels": {
+      "run": "test"
+    },
+    "name": "test"
+  },
+  "spec": {
+    "containers": [
+      {
+        "args": [
+          "bash",
+          "-c",
+          "_term() {\n  echo \"terminating...\" >> /shared/log\n  sleep 15s\n  echo \"terminated\" >> /shared/log\n  exit 0\n}\ntrap _term TERM\nexec sleep infinity & wait $!\n"
+        ],
+        "livenessProbe": {
+          "exec": {
+            "command": [
+              "false"
+            ]
+          },
+          "periodSeconds": 1,
+          "failureThreshold": 1
+        },
+        "image": "ubuntu",
+        "name": "terminating-container",
+        "volumeMounts": [
+          {
+            "name": "log",
+            "mountPath": "/shared"
+          }
+        ]
+      },
+      {
+        "args": [
+          "bash",
+          "-c",
+          "echo \"start a container\" >> /shared/log"
+        ],
+        "image": "ubuntu",
+        "name": "restarting-container",
+        "volumeMounts": [
+          {
+            "name": "log",
+            "mountPath": "/shared"
+          }
+        ]
+      },
+      {
+        "args": [
+          "tail",
+          "-F",
+          "/shared/log"
+        ],
+        "image": "ubuntu",
+        "name": "log",
+        "volumeMounts": [
+          {
+            "name": "log",
+            "mountPath": "/shared"
+          }
+        ]
+      }
+    ],
+    "volumes": [
+      {
+        "name": "log",
+        "emptyDir": {}
+      }
+    ]
+  }
+}

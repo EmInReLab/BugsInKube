@@ -1,0 +1,11 @@
+{
+  "id": 26,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "node",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/119838",
+  "description": "Even after resizing the container using the Kubernetes API, it still waits for the back-off time to finish before attempting to restart the container. This behavior contradicts the expectation that the container should be restarted immediately after resizing, regardless of its current state (including being in CrashLoopBackOff).",
+  "expected-behaviour": "After resizing the container using the Kubernetes API, it should be restarted immediately, regardless of its current state (including being in CrashLoopBackOff), in accordance with the specified restartPolicy in the Deployment configuration."
+}

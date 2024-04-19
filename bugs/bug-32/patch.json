@@ -1,0 +1,63 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "mainflux-ui"
+  },
+  "spec": {
+    "selector": {
+      "matchLabels": {
+        "app": "mainflux",
+        "component": "ui"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "mainflux",
+          "component": "ui",
+          "spec": null
+        },
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "MF_UI_PORT",
+                "value": "3000"
+              },
+              {
+                "name": "MF_UI_MQTT_WS_URL",
+                "value": "ws://localhost/mqtt"
+              },
+              {
+                "name": "MF_PROXY_AUTH",
+                "value": "false"
+              },
+              {
+                "name": "MF_UI_APP_PREFIX",
+                "value": "ui"
+              },
+              {
+                "name": "MF_PROXY_LOGOUT_URL",
+                "value": "/logout"
+              }
+            ],
+            "image": "mainflux/ui:latest",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "ui",
+            "ports": [
+              {
+                "containerPort": 3000,
+                "protocol": "TCP"
+              }
+            ],
+            "stdin": true,
+            "tty": true
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "restartPolicy": "Always"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "pod-demo-deployment",
+    "namespace": "stress-test"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "pod-demo"
+      }
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "pod-demo"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "pod-demo",
+            "image": "polinux/stress",
+            "resources": {
+              "limits": {
+                "memory": "600Mi",
+                "cpu": 0.2
+              },
+              "requests": {
+                "memory": "600Mi",
+                "cpu": 0.1
+              }
+            },
+            "command": [
+              "stress"
+            ],
+            "args": [
+              "--vm",
+              "1",
+              "--vm-bytes",
+              "256M",
+              "-c",
+              "2",
+              "--vm-hang",
+              "1"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

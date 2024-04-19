@@ -1,0 +1,36 @@
+{
+  "kind": "DaemonSet",
+  "apiVersion": "apps/v1",
+  "metadata": {
+    "name": "simple-probe"
+  },
+  "spec": {
+    "template": {
+      "spec": {
+        "containers": [
+          {
+            "name": "probe",
+            "livenessProbe": {
+              "exec": {
+                "command": [
+                  "ls",
+                  "/tmp/healthy"
+                ]
+              },
+              "periodSeconds": 10
+            },
+            "readinessProbe": {
+              "exec": {
+                "command": [
+                  "ls",
+                  "/tmp/healthy"
+                ]
+              },
+              "periodSeconds": 10
+            }
+          }
+        ]
+      }
+    }
+  }
+}

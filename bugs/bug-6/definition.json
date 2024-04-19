@@ -1,0 +1,11 @@
+{
+  "id": 6,
+  "platform": "k8s",
+  "affected-version": ">= v1.24.0",
+  "affected-categorization": "scheduling",
+  "severity": "major",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/110239",
+  "description": "The spec.adctiveDeadlineSeconds in a Job object would kill the Job and Pods if they ran longer than the integer specified. The Job defined should be killed 10 seconds, but isn't. It's actually being terminated after about 55 seconds.",
+  "expected-behaviour": "The Job to be killed after the n seconds as per spec.adctiveDeadlineSeconds: n."
+}

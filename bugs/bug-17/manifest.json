@@ -2,31 +2,26 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "bash"
+    "name": "my-app"
   },
   "spec": {
     "replicas": 1,
     "selector": {
       "matchLabels": {
-        "app": "bash"
+        "app": "my-app"
       }
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "bash"
+          "app": "app"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "bash",
-            "image": "ubuntu:21.04",
-            "command": [
-              "tail",
-              "-f",
-              "/dev/null"
-            ]
+            "name": "my-container",
+            "image": "nginx:latest"
           }
         ]
       }

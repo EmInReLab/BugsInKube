@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "platform": "k8s",
+  "affected-version": "<= v1.21.0",
+  "affected-categorization": "node",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/111704",
+  "description": "Kubernetes reports misleading image pull times due to serialized pulls (default) causing small images to wait for large image downloads, inflating the reported time.",
+  "expected-behaviour": "They expect the reported image pull time to reflect the actual download time for the specific image being pulled by a pod. "
+}

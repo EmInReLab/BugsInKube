@@ -1,0 +1,11 @@
+{
+  "id": 5,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "scheduling",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118371",
+  "description": "When you use a patch to change a pod's CPU or memory limits, the new limit can only be increased. Decreasing the limit through a patch doesn't enforce the lower value and the pod can continue using resources up to the previous limit.",
+  "expected-behaviour": "When you reduce a pod's CPU or memory limit using a patch, the expectation is for Kubernetes to throttle the pod's resource usage to stay below the new, lower limit."
+}

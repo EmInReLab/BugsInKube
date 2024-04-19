@@ -1,0 +1,11 @@
+{
+  "id": 21,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/123053",
+  "description": "When some actor manages to add duplicate OwnerReferences to an object, any other client attempting to use server-side apply to mutate the object will fail client-side.",
+  "expected-behaviour": "If unique OwnerReferences is an invariant required of objects, perhaps we can add some ratcheting validation for objects in etcd that enforces it."
+}

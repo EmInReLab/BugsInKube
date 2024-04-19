@@ -1,0 +1,11 @@
+{
+  "id": 23,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "apps",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/121828",
+  "description": "The  Pods created by a CronJob are not being deleted properly even after the associated Job has completed and the finalizers are preventing deletion. Attempts to delete the Pods with force or by editing finalizers directly have failed.",
+  "expected-behaviour": "The Pods to be deleted automatically once the associated Job no longer exists, or when attempting to delete them forcefully using the --force flag."
+}

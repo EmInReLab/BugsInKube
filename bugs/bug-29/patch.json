@@ -1,0 +1,27 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "loadbalance-echo-4"
+  },
+  "spec": {
+    "type": "NodePort",
+    "selector": {
+      "run": "echo-4"
+    },
+    "ports": [
+      {
+        "name": "tcp-1234",
+        "protocol": "TCP",
+        "port": 1234,
+        "targetPort": 5001
+      },
+      {
+        "name": "udp-1234",
+        "protocol": "UDP",
+        "port": 1234,
+        "targetPort": 5001
+      }
+    ]
+  }
+}

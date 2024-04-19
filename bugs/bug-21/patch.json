@@ -1,0 +1,51 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "service-name",
+    "ownerReferences": [
+      {
+        "apiVersion": "group.whatever.com/v1",
+        "blockOwnerDeletion": false,
+        "controller": false,
+        "kind": "SomeKind",
+        "name": "someName",
+        "uid": "1ea7605c-001a-11ea-9a90-027feb72be7e"
+      },
+      {
+        "apiVersion": "group.whatever.com/v1",
+        "blockOwnerDeletion": false,
+        "controller": false,
+        "kind": "SomeKind",
+        "name": "someName",
+        "uid": "1ea7605c-001a-11ea-9a90-027feb72be7e"
+      }
+    ]
+  },
+  "spec": {
+    "clusterIP": "172.30.249.81",
+    "clusterIPs": [
+      "172.30.249.81"
+    ],
+    "internalTrafficPolicy": "Cluster",
+    "ipFamilies": [
+      "IPv4"
+    ],
+    "ipFamilyPolicy": "SingleStack",
+    "ports": [
+      {
+        "port": 443,
+        "protocol": "TCP",
+        "targetPort": 5443
+      }
+    ],
+    "selector": {
+      "app": "whatever"
+    },
+    "sessionAffinity": "None",
+    "type": "ClusterIP"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": 39,
+  "platform": "k8s",
+  "affected-version": "<= v1.28.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/113246",
+  "description": "When apply a deployment yaml to modify spec.template.spec.containers[0].ports[1].containerPort from 8080 to 8081, there is an error occur:The Deployment \"kube-state-metrics\" is invalid: spec.template.spec.containers[0].ports[1].name: Duplicate value: \"http-metrics\".",
+  "expected-behaviour": "The apply patch should be successfully finished."
+}

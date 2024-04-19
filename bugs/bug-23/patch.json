@@ -1,0 +1,31 @@
+{
+  "apiVersion": "batch/v1beta1",
+  "kind": "CronJob",
+  "metadata": {
+    "name": "example-cronjob",
+    "finalizers": null
+  },
+  "spec": {
+    "schedule": "*/5 * * * *",
+    "jobTemplate": {
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [
+              {
+                "name": "example-container",
+                "image": "busybox",
+                "command": [
+                  "/bin/sh",
+                  "-c",
+                  "date; echo \"Hello, World!\""
+                ]
+              }
+            ],
+            "restartPolicy": "OnFailure"
+          }
+        }
+      }
+    }
+  }
+}
