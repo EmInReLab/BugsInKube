@@ -1,0 +1,11 @@
+{
+  "id": 52,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/100984",
+  "description": "Can not rename CoreDNS service's TCP port name via kubectl patching.",
+  "expected-behaviour": "The service port name gets updated as what's input in patch process."
+}

@@ -1,0 +1,11 @@
+{
+  "id": 53,
+  "platform": "k8s",
+  "affected-version": "<= v1.22.0",
+  "affected-categorization": "apps",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/97970",
+  "description": "When I patch a configuration only the selector config, if we replace the config, but it is added to the selector list. While patching the Selector should be atomic. Here in this case, it is not atomic.",
+  "expected-behaviour": "When I patch a configuration only the selector config, it should replace what I patch."
+}

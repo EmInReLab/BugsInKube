@@ -1,0 +1,11 @@
+{
+  "id": 42,
+  "platform": "k8s",
+  "affected-version": "<= v1.25.0",
+  "affected-categorization": "apps",
+  "severity": "major",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/111745",
+  "description": "Prior to 1.24.0 setting spec.activeDeadlineSeconds in a Job object (batch/v1) would kill the Job and Pods if they ran longer than the integer specified. The Job defined should be killed 10 seconds, but isn't. It's actually being terminated after about 55 seconds.",
+  "expected-behaviour": "The Job should obey the spec.activeDeadlineSeconds period and it should be killed after 10 seconds as per activeDeadlineSeconds: 10."
+}
