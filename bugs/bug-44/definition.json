@@ -1,0 +1,11 @@
+{
+  "id": 44,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "api-machinery",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/109576",
+  "description": "There will not any update in the managedFields when, we change/patch a configuration especially configMap or secret.",
+  "expected-behaviour": "There should be a log in the managedFields to get updated by the second kubectl apply"
+}

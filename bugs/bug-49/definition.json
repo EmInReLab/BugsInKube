@@ -1,0 +1,11 @@
+{
+  "id": 49,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/104252",
+  "description": "If you change protocol/port/name attributes of the kubernetes endpoint in the default namespace it is not reset to the correct value. This differs from the IP address which is reset rapidly.",
+  "expected-behaviour": "When certain attributes of a Kubernetes Endpoint in the default namespace are changed, such as port, port name, and protocol, they should reset to their default values if modified, similar to how the IP address attribute resets rapidly to its default value."
+}

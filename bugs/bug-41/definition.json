@@ -1,0 +1,11 @@
+{
+  "id": 41,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "node",
+  "severity": "major",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/110630",
+  "description": "\nLogs in a Kubernetes StatefulSet aren't rotating as expected based on kubelet configurations, causing excessive disk usage and delayed rotation.",
+  "expected-behaviour": "The container logs should be rotated when they reach the specified size limit defined in the kubelet configuration (container-log-max-size)."
+}

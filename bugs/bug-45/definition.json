@@ -1,0 +1,11 @@
+{
+  "id": 45,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "network",
+  "severity": "minor",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/108196",
+  "description": "When updating an EndpointSlice from v1beta1 to v1 API, dropping deprecatedTopology before populating new fields may cause loss of node names.",
+  "expected-behaviour": "Retain node names in deprecatedTopology until new fields are populated during EndpointSlice update from v1beta1 to v1 API."
+}

@@ -1,0 +1,11 @@
+{
+  "id": 43,
+  "platform": "k8s",
+  "affected-version": "<= v1.29.0",
+  "affected-categorization": "storage",
+  "severity": "minor",
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/112313",
+  "description": "PVC mount gets timed out when the number of parallel pod requests with pvc access goes past 400. This caused pod PVC mount retries(several of these in some cases.) and delays the pod startup.",
+  "expected-behaviour": "PVC should get mounted on the pods without any failedMount messages."
+}
