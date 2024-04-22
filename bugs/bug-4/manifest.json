@@ -18,7 +18,7 @@
         }
       },
       "spec": {
-        "restartPolicy": "Never",
+        "restartPolicy": "Always",
         "containers": [
           {
             "name": "qos-demo-ctr-5",
