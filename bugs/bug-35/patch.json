@@ -24,11 +24,6 @@
         }
       }
     },
-    "schedulingGate": [
-      {
-        "name": "example-gate"
-      }
-    ],
     "containers": [
       {
         "name": "example-container",

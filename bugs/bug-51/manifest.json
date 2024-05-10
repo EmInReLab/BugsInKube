@@ -2,19 +2,19 @@
   "apiVersion": "v1",
   "kind": "Service",
   "metadata": {
-    "name": "ports"
+    "name": "test"
   },
   "spec": {
-    "type": "ClusterIP",
-    "selector": {
-      "app": "hostnames"
-    },
     "ports": [
       {
-        "port": 80,
-        "protocol": "TCP",
-        "name": "tcp"
+        "name": "udp-53",
+        "port": 53,
+        "protocol": "UDP",
+        "targetPort": 53
       }
-    ]
+    ],
+    "selector": {
+      "test": "test"
+    }
   }
 }

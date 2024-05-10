@@ -1,7 +1,7 @@
 {
   "id": 13,
   "platform": "k8s",
-  "affected-version": "<= v1.29.0",
+  "affected-version": "<= v1.28.0",
   "affected-categorization": "api-machinery",
   "severity": "minor",
   "resolved": "closed",

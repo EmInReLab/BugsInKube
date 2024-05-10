@@ -2,10 +2,12 @@
   "apiVersion": "v1",
   "kind": "Secret",
   "metadata": {
-    "name": "example"
+    "name": "test",
+    "labels": {
+      "helm.sh/chart": "other"
+    }
   },
-  "stringData": {
-    "foo": "bar"
-  },
-  "type": "Opaque"
+  "data": {
+    "test": ""
+  }
 }

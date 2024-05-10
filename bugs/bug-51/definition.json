@@ -1,11 +1,11 @@
 {
   "id": 51,
   "platform": "k8s",
-  "affected-version": "<= v1.29.0",
-  "affected-categorization": "network",
+  "affected-version": "<= v1.22.0",
+  "affected-categorization": "apps",
   "severity": "minor",
-  "resolved": "open",
-  "link": "https://github.com/kubernetes/kubernetes/issues/105610",
-  "description": "When you retry your patching the service configuration with a new Ports set, that can work at the second time, but throws error on the first time. This shows the incompatible issue on the Kubernetes",
-  "expected-behaviour": "The same should be used if and only if the user is trying to remove a port that has the same port number on existing ports on the same service."
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/97970",
+  "description": "When I patch a configuration only the selector config, if we replace the config, but it is added to the selector list. While patching the Selector should be atomic. Here in this case, it is not atomic.",
+  "expected-behaviour": "When I patch a configuration only the selector config, it should replace what I patch."
 }

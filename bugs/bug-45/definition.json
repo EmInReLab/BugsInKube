@@ -1,11 +1,11 @@
 {
   "id": 45,
   "platform": "k8s",
-  "affected-version": "<= v1.29.0",
-  "affected-categorization": "network",
+  "affected-version": "<= v1.28.0",
+  "affected-categorization": "api-machinery",
   "severity": "minor",
   "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/108196",
-  "description": "When updating an EndpointSlice from v1beta1 to v1 API, dropping deprecatedTopology before populating new fields may cause loss of node names.",
-  "expected-behaviour": "Retain node names in deprecatedTopology until new fields are populated during EndpointSlice update from v1beta1 to v1 API."
+  "link": "https://github.com/kubernetes/kubernetes/issues/108148",
+  "description": "The problem is a discrepancy between client-side and server-side handling of duplicate ports in Kubernetes Deployment updates, leading to incorrect port deletions during subsequent applies.",
+  "expected-behaviour": "Kubernetes Deployment updates to accurately reflect the ports specified in the final update manifest without erroneously deleting ports that were previously deduplicated server-side."
 }

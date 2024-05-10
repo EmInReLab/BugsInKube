@@ -5,11 +5,6 @@
     "generateName": "example-no-affinity-"
   },
   "spec": {
-    "schedulingGate": [
-      {
-        "name": "example-gate"
-      }
-    ],
     "containers": [
       {
         "name": "example-container",

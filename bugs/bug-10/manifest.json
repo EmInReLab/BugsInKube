@@ -1,16 +1,31 @@
 {
-  "apiVersion": "v1",
-  "kind": "Pod",
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
   "metadata": {
-    "name": "pod-large"
+    "name": "deployment-large"
   },
   "spec": {
-    "containers": [
-      {
-        "name": "large-image",
-        "image": "roadmunk/largecontainer:latest"
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "large-image"
       }
-    ],
-    "restartPolicy": "Never"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "large-image"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "large-image",
+            "image": "roadmunk/largecontainer:latest"
+          }
+        ],
+        "restartPolicy": "Never"
+      }
+    }
   }
 }

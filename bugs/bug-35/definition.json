@@ -2,10 +2,10 @@
   "id": 35,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "scheduling",
+  "affected-categorization": "network",
   "severity": "minor",
   "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/118052",
-  "description": "When a gated pod is created with nil affinity and a user/controller tries to update its nodeAffinity, the validation fails.",
-  "expected-behaviour": "The pod gets updated with the new affinity."
+  "link": "https://github.com/kubernetes/kubernetes/issues/116747",
+  "description": "When create a service which already exist,I got 422 and error message The Service \"my-service\" is invalid: spec.ports[0].nodePort: Invalid value: 30123: provided port is already allocated.",
+  "expected-behaviour": "The should not execute. The expected behaviour would be, the pod kubectl apply should throw an error and should not apply the config."
 }

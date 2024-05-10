@@ -2,10 +2,10 @@
   "id": 27,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "network",
+  "affected-categorization": "api-machinery",
   "severity": "minor",
   "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/119700",
-  "description": "The status subresource of a service to set .spec.loadBalancer.ingress[].ip, it is allowed even when the .spec.type is not \"LoadBalancer\". However, when the user subsequently updates the service spec in any way, .status.loadBalancer is wiped.",
-  "expected-behaviour": "When a user updates the status subresource of a service to set .spec.loadBalancer.ingress[].ip, it should only be allowed if .spec.type is \"LoadBalancer\". If the user updates the service spec in any way afterwards, .status.loadBalancer should not be wiped."
+  "link": "https://github.com/kubernetes/kubernetes/issues/119141",
+  "description": "When performing a server-side apply PATCH request and encountering conflicts with differing field owners, Kubernetes responds with a 409 conflict error containing incorrect and missing conflicting fields in the error detail.",
+  "expected-behaviour": "When encountering conflicts during a server-side apply PATCH request, Kubernetes should respond with a 409 conflict error containing all the correct conflicting fields in the error detail, without any duplicates or omissions."
 }

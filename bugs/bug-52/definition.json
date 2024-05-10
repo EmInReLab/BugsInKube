@@ -2,10 +2,10 @@
   "id": 52,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "network",
+  "affected-categorization": "apps",
   "severity": "minor",
-  "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/100984",
-  "description": "Can not rename CoreDNS service's TCP port name via kubectl patching.",
-  "expected-behaviour": "The service port name gets updated as what's input in patch process."
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/124388",
+  "description": "When the update strategy for a DaemonSet in Kubernetes is set to RollingUpdate and maxSurge is greater than 1, If a Node's status is under pressure, the system repeatedly creates and then evicts Pods. This behavior creates a lot of unnecessary churn and could potentially cause problems with system resources.",
+  "expected-behaviour": "When the update strategy for a DaemonSet in Kubernetes is set to RollingUpdate and maxSurge is greater than 1, it should show like the behavior when option maxSurge is 0."
 }

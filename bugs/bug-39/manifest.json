@@ -2,8 +2,7 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "kube-state-metrics",
-    "namespace": "kube-system"
+    "name": "kube-state-metrics"
   },
   "spec": {
     "replicas": 1,

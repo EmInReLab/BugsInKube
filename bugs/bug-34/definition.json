@@ -2,10 +2,10 @@
   "id": 34,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "api-machinery",
+  "affected-categorization": "scheduling",
   "severity": "minor",
-  "resolved": "open",
-  "link": "https://github.com/kubernetes/kubernetes/issues/118230",
-  "description": "Label check rule fails to parse 'dot' and 'slash' characters, allowing secrets with \"helm.sh/chart: other\" labels despite condition.",
-  "expected-behaviour": "Correct evaluation of labels with 'dot' and 'slash' characters, blocking secrets that match specified condition, like \"helm.sh/chart: other\"."
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118052",
+  "description": "When a gated pod is created with nil affinity and a user/controller tries to update its nodeAffinity, the validation fails.",
+  "expected-behaviour": "The pod gets updated with the new affinity."
 }

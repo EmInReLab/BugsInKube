@@ -4,8 +4,8 @@
   "affected-version": "<= v1.29.0",
   "affected-categorization": "api-machinery",
   "severity": "minor",
-  "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/118920",
-  "description": "Kubectl apply svc cannot add UDP protocol ports.",
-  "expected-behaviour": "This should not fail. Kubectl apply svc can add UDP protocol ports"
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/118715",
+  "description": "Patching a Deployment fails with \"map: map[] does not contain declared merge key: name\" error. Likely due to incorrect YAML syntax or structure in the patch file.",
+  "expected-behaviour": "Successful patching of Deployment with correct YAML syntax, providing relevant error messages if modifications fail or confirming no changes if patch is applied successfully"
 }

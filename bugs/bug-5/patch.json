@@ -2,8 +2,7 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "pod-demo-deployment",
-    "namespace": "stress-test"
+    "name": "pod-demo-deployment"
   },
   "spec": {
     "replicas": 1,

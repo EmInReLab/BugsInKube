@@ -2,10 +2,10 @@
   "id": 37,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "api-machinery",
+  "affected-categorization": "apps",
   "severity": "minor",
-  "resolved": "closed",
-  "link": "https://github.com/kubernetes/kubernetes/issues/116135",
-  "description": "When creating a deployment and requesting cpu, then there are some cases when the output of kubectl apply (when doing it more than once) shows configured rather than unchanged.",
-  "expected-behaviour": "The output of kubectl apply should be:\"... unchanged\""
+  "resolved": "open",
+  "link": "https://github.com/kubernetes/kubernetes/issues/115538",
+  "description": "When I update a Deployment with Recreate Strategy. Its conditions remains Complete (when status.observedGeneration == spec.generation) until the older ReplicaSet finished scaled to 0.",
+  "expected-behaviour": "Kubernetes marks a Deployment as Progressing, when The Deployment is scaling down its older ReplicaSet(s)."
 }

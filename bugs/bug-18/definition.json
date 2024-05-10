@@ -6,6 +6,6 @@
   "severity": "minor",
   "resolved": "open",
   "link": "https://github.com/kubernetes/kubernetes/issues/121785",
-  "description": "SSA update fails to remove pod anti-affinity field from deployment created with the field set, despite dry-run and force ownership.",
+  "description": "SSA update fails to remove pod anti-affinity field from deployment created with the field set, despite dry-run and force ownership. A pod affinity field set pod can not be patched with affinity field removed.",
   "expected-behaviour": "The expected behavior is for the SSA update to successfully remove the pod anti-affinity field from the deployment."
 }

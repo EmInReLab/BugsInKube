@@ -1,11 +1,11 @@
 {
   "id": 48,
   "platform": "k8s",
-  "affected-version": "<= v1.29.0",
-  "affected-categorization": "api-machinery",
+  "affected-version": "<= v1.27.0",
+  "affected-categorization": "network",
   "severity": "minor",
-  "resolved": "open",
-  "link": "https://github.com/kubernetes/kubernetes/issues/99003",
-  "description": "Migrating from client-side apply to server-side apply leaves the objects in a somewhat corrupted state, and result in the resources forever being inconsistent with their expected state.",
-  "expected-behaviour": "If apply a manifest using client-side apply and then switch to server-side apply with no changes, the operation succeeds. However, if then delete a field from the manifest and run server-side apply again, the field stays in the resource instead of being removed"
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/103804",
+  "description": "When you execute kubectl delete deploy foobar --cascade='foreground', it will delete the replica-sets and the pods of the deployment.",
+  "expected-behaviour": "When a object referred by an ownerReference and having finalizers is deleted, I expect to stop cascade propagation until deleted the finalizers when cascade='foreground'."
 }

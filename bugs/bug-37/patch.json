@@ -2,34 +2,28 @@
   "apiVersion": "apps/v1",
   "kind": "Deployment",
   "metadata": {
-    "name": "busybox-deployment",
-    "labels": {
-      "app": "busybox"
-    }
+    "name": "myapp"
   },
   "spec": {
-    "replicas": 1,
     "selector": {
       "matchLabels": {
-        "app": "busybox"
+        "app": "myapp"
       }
+    },
+    "strategy": {
+      "type": "Recreate"
     },
     "template": {
       "metadata": {
         "labels": {
-          "app": "busybox"
+          "dummy": "dummy2"
         }
       },
       "spec": {
         "containers": [
           {
-            "name": "busybox",
-            "image": "busybox:1.36",
-            "resources": {
-              "requests": {
-                "cpu": "1.2"
-              }
-            }
+            "name": "myapp",
+            "image": "nginx:1.15.8"
           }
         ]
       }
