@@ -2,7 +2,7 @@
   "apiVersion": "v1",
   "kind": "Pod",
   "metadata": {
-    "generateName": "example-no-affinity-"
+    "generateName": "example-no-affinity"
   },
   "spec": {
     "containers": [
