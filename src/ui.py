@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from main import handleSubmit
-import time
 
 
 def update_number_range(event):
@@ -32,7 +31,11 @@ def open_new_window(selected_platform, selected_number, selected_checkbox):
 
     # Continuously add new lines of text dynamically
     handleSubmit(
-        text_widget, new_window, selected_platform, selected_number, selected_checkbox
+        text_widget,
+        new_window,
+        selected_platform,
+        selected_number,
+        selected_checkbox,  # noqa E501
     )
 
 
@@ -44,7 +47,9 @@ root.title("PaaS Bug Inspector")
 dropdown_label = ttk.Label(root, text="Select the PaaS platform:")
 dropdown_label.grid(row=0, column=0, padx=10, pady=5)
 dropdown_var = tk.StringVar()
-dropdown_combobox = ttk.Combobox(root, textvariable=dropdown_var, values=["Kubernetes"])
+dropdown_combobox = ttk.Combobox(
+    root, textvariable=dropdown_var, values=["Kubernetes"]
+)  # noqa E501
 dropdown_combobox.grid(row=0, column=1, padx=10, pady=5)
 dropdown_combobox.current(None)
 dropdown_combobox.bind("<<ComboboxSelected>>", update_number_range)

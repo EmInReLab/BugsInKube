@@ -1,4 +1,3 @@
-import abc
 from src.Bugs import Bug
 
 
