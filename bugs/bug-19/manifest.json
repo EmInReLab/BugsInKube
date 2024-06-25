@@ -11,10 +11,10 @@
         "image": "nginx",
         "resources": {
           "limits": {
-            "cpu": "300m"
+            "cpu": "310m"
           },
           "requests": {
-            "cpu": "310m"
+            "cpu": "300m"
           }
         }
       }

@@ -6,9 +6,6 @@
   },
   "spec": {
     "automountServiceAccountToken": false,
-    "nodeSelector": {
-      "kubernetes.io/hostname": "<node>"
-    },
     "volumes": [
       {
         "name": "test",

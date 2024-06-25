@@ -1,9 +1,8 @@
 {
-  "apiVersion": "discovery.k8s.io/v1",
+  "apiVersion": "discovery.k8s.io/v1beta1",
   "kind": "EndpointSlice",
   "metadata": {
-    "name": "example-endpointslice",
-    "namespace": "your-namespace"
+    "name": "foo-backend-custom"
   },
   "addressType": "IPv4",
   "ports": [
@@ -16,33 +15,14 @@
   "endpoints": [
     {
       "addresses": [
-        "192.168.1.1",
-        "192.168.1.2"
+        "192.168.1.1"
       ],
-      "ports": [
-        {
-          "name": "http",
-          "protocol": "TCP",
-          "port": 80
-        }
-      ],
+      "conditions": {
+        "ready": true
+      },
+      "hostname": "backend-1",
       "topology": {
-        "kubernetes.io/hostname": "node1"
-      }
-    },
-    {
-      "addresses": [
-        "192.168.1.3"
-      ],
-      "ports": [
-        {
-          "name": "http",
-          "protocol": "TCP",
-          "port": 80
-        }
-      ],
-      "topology": {
-        "kubernetes.io/hostname": "node2"
+        "kubernetes.io/hostname": "node-1"
       }
     }
   ]

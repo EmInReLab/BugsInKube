@@ -1,10 +1,16 @@
 {
   "apiVersion": "v1",
-  "kind": "ConfigMap",
+  "kind": "Service",
   "metadata": {
-    "name": "test"
+    "name": "my-svc"
   },
-  "data": {
-    "key": "value"
+  "spec": {
+    "selector": null,
+    "ports": [
+      {
+        "port": 80,
+        "targetPort": "http"
+      }
+    ]
   }
 }

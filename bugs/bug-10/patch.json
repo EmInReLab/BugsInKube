@@ -1,16 +1,31 @@
 {
-  "apiVersion": "v1",
-  "kind": "Pod",
+  "apiVersion": "apps/v1",
+  "kind": "Deployment",
   "metadata": {
-    "name": "pod-small"
+    "name": "deployment-small"
   },
   "spec": {
-    "containers": [
-      {
-        "name": "small-image",
-        "image": "busybox:latest"
+    "replicas": 1,
+    "selector": {
+      "matchLabels": {
+        "app": "small-image"
       }
-    ],
-    "restartPolicy": "Never"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "small-image"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "small-image",
+            "image": "busybox:latest"
+          }
+        ],
+        "restartPolicy": "Never"
+      }
+    }
   }
 }

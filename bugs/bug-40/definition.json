@@ -2,10 +2,10 @@
   "id": 40,
   "platform": "k8s",
   "affected-version": "<= v1.29.0",
-  "affected-categorization": "api-machinery",
-  "severity": "minor",
-  "resolved": "open",
-  "link": "https://github.com/kubernetes/kubernetes/issues/111735",
-  "description": "When you execute kubectl delete deploy foobar --cascade='foreground', it will delete the replica-sets and the pods of the deployment.",
-  "expected-behaviour": "When a object referred by an ownerReference and having finalizers is deleted, I expect to stop cascade propagation until deleted the finalizers when cascade='foreground'."
+  "affected-categorization": "node",
+  "severity": "major",
+  "resolved": "closed",
+  "link": "https://github.com/kubernetes/kubernetes/issues/110630",
+  "description": "\nLogs in a Kubernetes StatefulSet aren't rotating as expected based on kubelet configurations, causing excessive disk usage and delayed rotation.",
+  "expected-behaviour": "The container logs should be rotated when they reach the specified size limit defined in the kubelet configuration (container-log-max-size)."
 }

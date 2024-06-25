@@ -5,7 +5,7 @@
   "affected-categorization": "api-machinery",
   "severity": "minor",
   "resolved": "open",
-  "link": "https://github.com/kubernetes/kubernetes/issues/118715",
-  "description": "Patching a Deployment fails with \"map: map[] does not contain declared merge key: name\" error. Likely due to incorrect YAML syntax or structure in the patch file.",
-  "expected-behaviour": "Successful patching of Deployment with correct YAML syntax, providing relevant error messages if modifications fail or confirming no changes if patch is applied successfully"
+  "link": "https://github.com/kubernetes/kubernetes/issues/118519",
+  "description": "When apply the same secret twice,it creates a new resourceVersion and an updated managedFields time, but otherwise no changes.",
+  "expected-behaviour": "When applying a secret or any configuration again and again, it should not configurable."
 }

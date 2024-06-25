@@ -1,29 +1,35 @@
 {
-  "apiVersion": "batch/v1",
-  "kind": "Job",
+  "apiVersion": "v1",
+  "kind": "Pod",
   "metadata": {
-    "name": "test"
+    "name": "nginx"
   },
   "spec": {
-    "ttlSecondsAfterFinished": 120,
-    "completions": 5,
-    "parallelism": 1,
-    "backoffLimit": 4,
-    "template": {
-      "spec": {
-        "restartPolicy": "Never",
-        "containers": [
+    "automountServiceAccountToken": true,
+    "volumes": [
+      {
+        "name": "test",
+        "hostPath": {
+          "path": "/tmp/test"
+        }
+      }
+    ],
+    "containers": [
+      {
+        "name": "nginx",
+        "image": "nginx:1.14.2",
+        "volumeMounts": [
           {
-            "name": "ctr",
-            "image": "alpine:latest",
-            "command": [
-              "sh",
-              "-c",
-              "echo \"TEST\" && sleep 60"
-            ]
+            "name": "test",
+            "mountPath": "/test"
+          }
+        ],
+        "ports": [
+          {
+            "containerPort": 80
           }
         ]
       }
-    }
+    ]
   }
 }

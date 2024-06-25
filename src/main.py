@@ -95,7 +95,7 @@ def handleSubmit(
     bugId: int,
     toReproduce: bool = False,
 ):
-    subdirectory = find_subdirectory_by_number("./bugs", bugId)
+    subdirectory = find_subdirectory_by_number("../bugs", bugId)
     if subdirectory:
         text_widget.insert(
             tk.END, "====================BUG Definition====================\n"

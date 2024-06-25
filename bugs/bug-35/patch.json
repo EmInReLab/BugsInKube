@@ -1,38 +1,20 @@
 {
   "apiVersion": "v1",
-  "kind": "Pod",
+  "kind": "Service",
   "metadata": {
-    "generateName": "example-no-affinity-"
+    "name": "my-service"
   },
   "spec": {
-    "affinity": {
-      "nodeAffinity": {
-        "requiredDuringSchedulingIgnoredDuringExecution": {
-          "nodeSelectorTerms": [
-            {
-              "matchExpressions": [
-                {
-                  "key": "expr",
-                  "operator": "In",
-                  "values": [
-                    "value"
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      }
+    "selector": {
+      "app": "MyApp"
     },
-    "schedulingGate": [
+    "type": "NodePort",
+    "ports": [
       {
-        "name": "example-gate"
-      }
-    ],
-    "containers": [
-      {
-        "name": "example-container",
-        "image": "quay.io/openshifttest/hello-openshift:1.2.0"
+        "protocol": "TCP",
+        "port": 80,
+        "targetPort": 9376,
+        "nodePort": 30123
       }
     ]
   }

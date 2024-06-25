@@ -1,10 +1,29 @@
 {
-  "kind": "ConfigMap",
-  "apiVersion": "v1",
+  "apiVersion": "discovery.k8s.io/v1beta1",
+  "kind": "EndpointSlice",
   "metadata": {
-    "name": "test1"
+    "name": "foo-backend-custom"
   },
-  "data": {
-    "key": "value"
-  }
+  "addressType": "IPv4",
+  "ports": [
+    {
+      "name": "http",
+      "protocol": "TCP",
+      "port": 80
+    }
+  ],
+  "endpoints": [
+    {
+      "addresses": [
+        "192.168.1.1"
+      ],
+      "conditions": {
+        "ready": true
+      },
+      "hostname": "backend-1",
+      "topology": {
+        "kubernetes.io/hostname": "node-1"
+      }
+    }
+  ]
 }
