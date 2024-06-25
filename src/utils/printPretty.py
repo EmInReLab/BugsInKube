@@ -7,7 +7,7 @@ def printDefinitionK8s(definition: dict, manifest: dict, patch: dict) -> None:
     print(f'Bug reported Platform\t\t\t: {definition["platform"]}')
     print(f'Affected Version\t\t\t: {definition["affected-version"]}')
     print(
-        f'Affected Component Categorization\t: {definition["affected-categorization"]}'
+        f'Affected Component Categorization\t: {definition["affected-categorization"]}'  # noqa E501
     )
     print(f'Severity\t\t\t\t: {definition["severity"]}')
     print("======================================================")
@@ -16,7 +16,7 @@ def printDefinitionK8s(definition: dict, manifest: dict, patch: dict) -> None:
     else:
         print("Full patch of the bug has been produced")
     print(
-        f'Follow the link for more information about the bug status: {definition["link"]}'
+        f'Follow the link for more information about the bug status: {definition["link"]}'  # noqa E501
     )
     print("======================================================")
     print("Detailed Description About the Bug")
