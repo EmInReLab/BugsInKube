@@ -1,10 +1,10 @@
 import abc
 import json
-from src.utils.printPretty import *
+from src.utils.printPretty import printDefinitionK8s
 
 
 class Bug:
-    def __init__(self, platform: str, info: str, reproducable: bool = False) -> None:
+    def __init__(self, platform: str, info: str, reproducable: bool = False) -> None:  # noqa E501
         self.platform = platform
         self.reproducable = reproducable
         self.info = info
