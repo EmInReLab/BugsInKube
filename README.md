@@ -1,4 +1,4 @@
-# Bug Inspector Toolkit
+# BugsInKube: Bug Inspector Toolkit
 
 ### Description
 
