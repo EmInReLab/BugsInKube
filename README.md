@@ -35,6 +35,6 @@ bugs in Kubernetes effectively.
 
 ### Tool run:
 
-[Tool Run Video](https://gemoo.com/tools/upload-video/share/682540682540240896?codeId=Ml6XZagxn1mxo&card=682540678484348928)
+[Tool Run Video](https://www.youtube.com/watch?v=q0cPP-GHJUc)
 
 Full dataset can be accessed from here: [Full dataset](https://doi.org/10.6084/m9.figshare.24774516.v2)
